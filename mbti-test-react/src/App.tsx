@@ -1,24 +1,18 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-
-import './App.css'
+import './assets/css/style.css';
+import Router from './routes/routes';
 
 function App() {
-  const [data, setData] = useState('')
+  // const [data, setData] = useState('')
 
-  useEffect(() => {
-      axios.get('/api')
-      .then(res => setData(res.data))
-      .catch(err => console.log(err))
-  }, []);
+  // useEffect(() => {
+  //     axios.get('/api')
+  //     .then(res => setData(res.data))
+  //     .catch(err => console.log(err))
+  // }, []);
 
-  return (
-    <>
-      <p className="read-the-docs">
-        받아온 값 : {data}
-      </p>
-    </>
-  )
+  return <Router/>
 }
 
 export default App
