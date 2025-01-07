@@ -7,12 +7,50 @@
   align-items: center;
 }
 
+.question-box {  
+  width : 100px;
+  height : 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.question {  
+  width : 500px;
+  height : 200px;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .start-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: .75rem .532rem;
   min-width: 72px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.answer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 500px;
+  margin-top: 10px;
+  padding: 20px 0;
   font-size: 14px;
   font-weight: 800;
   line-height: 1;
