@@ -1,3 +1,7 @@
+button {
+  all: unset;
+}
+
 .container {  
   width : 100vw;
   height : 100vh;
@@ -8,8 +12,8 @@
 }
 
 .question-box {  
-  width : 100px;
-  height : 100px;
+  width : 500px;
+  height : 200px;
 
   display: flex;
   flex-direction: column;
@@ -48,9 +52,11 @@
   align-items: center;
   justify-content: center;
 
-  width: 500px;
-  margin-top: 10px;
-  padding: 20px 0;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  width: 550px;
+  margin-top: 18px;
+  padding: 30px 0;
   font-size: 14px;
   font-weight: 800;
   line-height: 1;
@@ -59,4 +65,9 @@
   white-space: nowrap;
   cursor: pointer;
 }
+
+.answer-btn:hover {
+  background-color: #f0f0f0;
+}
+
 

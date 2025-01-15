@@ -1,6 +1,7 @@
 server:
   port: 8090
 
+# spring 설정
 spring:
   datasource:
     url: jdbc:mariadb://localhost:3306/mbti
@@ -8,10 +9,16 @@ spring:
     password: admin!testdb123
     driver-class-name: org.mariadb.jdbc.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MariaDBDialect
+# mybatis 설정
+mybatis:
+  configuration:
+    multiple-result-sets-enabled: false
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    jdbc-type-for-null: varchar
+    default-fetch-size: 500
+  mapper-locations: classpath:mybatis-mapper/**/*.xml
+
+# 로그 설정
+logging:
+  config: classpath:log4j2.xml

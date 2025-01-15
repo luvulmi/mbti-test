@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios';
 import './assets/css/style.css';
 import Router from './routes/routes';
 

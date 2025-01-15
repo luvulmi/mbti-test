@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <timestamp key="BY_DATE" datePattern="yyyy-MM-dd"/>
+    <property name="LOG_PATH" value ="/usr/local/tomcat10-safety-daelim-8280/logs" />
+    <property name="LOG_PATTERN"
+        value="[%d{yyyy-MM-dd HH:mm:ss}:%-4relative] %green([%thread]) %highlight([%-5level]) [%logger] %boldWhite([%M:%yellow(%L)]) - %msg%n"/>
+
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- SQL Logger -->
+    <logger name="jdbc.connection" additivity="false">
+        <level value="warn" />
+        <appender-ref ref="CONSOLE"/> 
+    </logger>
+    
+    <logger name="jdbc.audit" additivity="false"> 
+        <level value="warn"/>  
+        <appender-ref ref="CONSOLE"/> 
+    </logger> 
+    
+    <logger name="jdbc.resultset" additivity="false">
+        <level value="warn" />
+        <appender-ref ref="CONSOLE"/> 
+    </logger>
+    
+    <!-- info 하위만 표시-->
+    <logger name="jdbc.sqlonly" additivity="false"> 
+        <level value="info"/> 
+        <appender-ref ref="CONSOLE"/> 
+    </logger>
+    
+    <!-- info 하위만 표시-->
+    <logger name="jdbc.resultsettable" additivity="false"> 
+        <level value="info"/>  
+        <appender-ref ref="CONSOLE"/> 
+    </logger> 
+    
+    <logger name="jdbc.sqltiming" additivity="false">
+        <level value="warn" />
+        <appender-ref ref="CONSOLE"/> 
+    </logger>
+
+    <!-- [Fatal > Error > Warn > Info > Debug > Trace] 로그 레벨 -->
+    <!-- .java에서 Logger.info()인경우 상위만 표시-->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
